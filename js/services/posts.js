@@ -1,6 +1,5 @@
 app.factory('posts', [function(){
-  var posts = {
-    posts: [{
+  var posts = [{
       title: 'this is hardcoded', 
       upvotes: 5,
       comments: [
@@ -9,6 +8,6 @@ app.factory('posts', [function(){
         { author: 'Jim', body: 'Ok post!', upvotes: 1 }
       ]
     }]
-  };
+
   return posts;
 }]);
