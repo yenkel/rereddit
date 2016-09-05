@@ -6,3 +6,19 @@
 .glyphicon-thumbs-up {
   cursor: pointer;
 }
+
+.editing form {
+  display: inline-block;
+}
+
+span.editing .edit {
+  display: inline-block;
+}
+
+span.editing .view {
+  display: none;
+}
+
+span .edit {
+  display: none;
+}

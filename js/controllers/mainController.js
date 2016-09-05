@@ -1,6 +1,9 @@
 app.controller('MainCtrl', ['$scope','posts', function($scope, posts){
   $scope.posts = posts;
 
+  $scope.ESCAPE_KEY = 27;
+  $scope.editedPost = {};
+
   $scope.addPost = function() {
     if ($scope.title === '') { return; }
     $scope.posts.push({ 
@@ -20,4 +23,29 @@ app.controller('MainCtrl', ['$scope','posts', function($scope, posts){
   $scope.incrementUpvotes = function(item) {
     item.upvotes += 1;
   }
+
+  $scope.doneEditing = function (post, index) {
+    $scope.editedPost = {};
+    post.title = post.title.trim();
+
+    if (!post.title) {
+      $scope.removePost(index);
+    }
+  };
+
+  $scope.removeTodo = function (index) {
+    posts.splice(index, 1);
+  };
+
+  $scope.revertEditing = function (index) {
+    $scope.editedPost = {};
+    posts[index] = $scope.originalPost;
+  };
+
+  $scope.editPost = function (post) {
+    $scope.editedPost = post;
+
+    // Clone the original post to restore it on demand. 
+    $scope.originalPost = angular.copy(post);
+  };
 }]);
