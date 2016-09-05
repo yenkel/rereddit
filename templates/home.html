@@ -4,6 +4,7 @@
 <div ng-repeat="post in posts | orderBy:'-upvotes'">
   <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(post)"></span>
   {{post.upvotes}}
+  
   <span class="post-title" ng-class="{editing: post === editedPost}">
     <form ng-submit="doneEditing(post, $index)">
       <input class="edit" 
