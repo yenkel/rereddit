@@ -4,7 +4,7 @@
     <span class="post-text">
       {{post.text}} 
     </span> - by {{post.author}}
-    <!--a> TO DO - Comments Link</a-->
+    <a ui-sref="comment({id: post._id})">comments</a>
 </div>
 <form ng-submit="addPost()">
     <h3>Add a new post</h3>
