@@ -10,10 +10,9 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: '/templates/home.html',
       controller: 'PostController'
     })
-    //state for a single post
-    .state('post', {
+    .state('comment', {
       url: '/posts/:id',
-      templateUrl: '/templates/posts.html',
+      templateUrl: '/templates/comments.html',
       controller: 'CommentController'
     })
     .state('login', {
