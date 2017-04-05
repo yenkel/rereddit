@@ -11,7 +11,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: 'PostController'
     })
     .state('comment', {
-      url: '/posts/:id',
+      url: '/post/:id',
       templateUrl: '/templates/comments.html',
       controller: 'CommentController'
     })
