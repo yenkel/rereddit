@@ -1,8 +1,6 @@
 <div class="page-header">
     <a us-sref="home">back</a>
-    <h3>
-    <span>{{post.text}}</span>
-  </h3>
+    <h3>{{post.text}}</h3>
 </div>
 <div ng-repeat="comment in post.comments | orderBy:'-upvotes'">
     <span class="glyphicon glyphicon-thumbs-up" ng-click="upvote()"></span>
