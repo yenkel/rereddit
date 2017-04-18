@@ -3,8 +3,8 @@
     <h3>{{post.text}}</h3>
 </div>
 <div ng-repeat="comment in post.comments | orderBy:'-upvotes'">
-    <span class="glyphicon glyphicon-thumbs-up" ng-click="upvote()"></span>
-    <span class="glyphicon glyphicon-thumbs-down" ng-click="downvote()"></span> {{comment.upvotes}} - by {{comment.author}}
+    <span class="glyphicon glyphicon-thumbs-up" ng-click="upvote(post)"></span>
+    <span class="glyphicon glyphicon-thumbs-down" style="color:red;" ng-click="downvote()"></span> {{comment.upvotes}} - by {{comment.author}}
     <span class="comment-body">{{comment.body}}</span>
 </div>
 <form ng-submit="addComment()">

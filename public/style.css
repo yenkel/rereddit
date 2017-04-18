@@ -1,10 +1,87 @@
 .comment-body,
 .post-text {
-    font-size: 24px;
+    font-size: 30px;
     margin-left: 30px;
+    font-family: verdana;
+    color:black;
 }
 
 .glyphicon-thumbs-down,
 .glyphicon-thumbs-up {
     cursor: pointer;
+}
+
+body{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-image: url(http://www.iperche.fr/wp-content/uploads/2017/03/postit.jpg);
+}
+
+.navbar-default{
+      background-color: darkblue;
+
+}
+
+.navbar-default .navbar-brand{
+  color:white;
+  font-size: 20px;
+  font-family: verdana;
+}
+
+.navbar-default .navbar-text{
+  color:white;
+  font-size: 20px;
+  font-family: verdana;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color:white;
+    font-size: 20px;
+    font-family: verdana;
+  }
+
+h1{
+  font-size: 100px;
+  font-family: 'Russo One', sans-serif;
+  color:darkblue;
+  padding-bottom: 20px;
+  margin: 9px;
+}
+
+a{
+  color: black;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+*{
+  font-family: verdana;
+  font-size: 20px;
+  /*border: 1px solid black;*/
+}
+
+.n{
+  border: 5px solid white;
+  margin: 30px;
+  font-size: 25px;
+  color:darkblue;
+}
+
+.glyphicon{
+  font-size: 53px;
+}
+
+button{
+  font-size: 13px;
+  font-family: 'Russo One', sans-serif;
+}
+
+h3{
+  font-size: 35px;
+  color: darkblue;
+  font-family: 'Russo One', sans-serif;
+}
+
+.u{
+  margin:30px;
 }
