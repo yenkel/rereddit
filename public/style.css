@@ -11,15 +11,8 @@
     cursor: pointer;
 }
 
-
-/*body{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-image: url(http://www.iperche.fr/wp-content/uploads/2017/03/postit.jpg);
-}*/
-
 .navbar-default {
-    background-color: darkblue;
+    background-color: #778899;
 }
 
 .navbar-default .navbar-brand {
@@ -43,7 +36,7 @@
 h1 {
     font-size: 100px;
     font-family: 'Russo One', sans-serif;
-    color: darkblue;
+    color: #2F4F4F;
     padding-bottom: 20px;
     margin: 9px;
 }
@@ -64,7 +57,7 @@ a {
     border: 5px solid white;
     margin: 30px;
     font-size: 25px;
-    color: darkblue;
+    color: #2F4F4F;
 }
 
 .glyphicon {
@@ -78,7 +71,7 @@ button {
 
 h3 {
     font-size: 35px;
-    color: darkblue;
+    color: #2F4F4F;
     font-family: 'Russo One', sans-serif;
 }
 

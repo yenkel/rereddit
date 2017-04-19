@@ -1,49 +1,42 @@
 app.controller('CommentController', function($scope, $stateParams, postFactory) {
 
-  $scope.addComment = function() {
-    postFactory.addComment($stateParams.id, $scope.newReview)
-    .then(function(post) {
-      $scope.post = post;
-    })
-  }
+    $scope.addComment = function() {
+        postFactory.addComment($stateParams.id, $scope.body)
+            .then(function(newPost) {
+                $scope.post = newPost;
+            })
+            .catch(function(err) {
+                alert(err.data)
+            });
+    }
 
-  $scope.upvote = function() {
-    if(scope.vote.downValue === 1) {
-          scope.vote.downValue = 0;
-          scope.vote.downvotes--;
-        }
+    $scope.upvote = function(comment) {
+        postFactory.voteComment($stateParams.id, comment._id, true).then(function(response) {
+            comment.upvotes++;
+        });
+    };
 
-        if(scope.vote.upValue === 1) {
-          scope.vote.upvotes++;
-        } else {
-          scope.vote.upvotes--;
-        }
-      };
+    $scope.downvote = function(comment) {
+        postFactory.voteComment($stateParams.id, comment._id, false).then(function(response) {
+            comment.upvotes--;
+        });
+    };
 
-  $scope.downvote = function() {
-    if(scope.vote.upValue === 1) {
-           scope.vote.upValue = 0;
-           scope.vote.upvotes--;
-         }
+    $scope.deleteComment = function(commentid) {
+        var self = this;
+        postFactory.deleteComment(this.post._id, commentid)
+            .then(function(response) {
+                $scope.post.comments.splice(self.$index, 1);
+            })
+            //this is new
+            .catch(function(err) {
+                console.log(err);
+            });
+    }
 
-         if(scope.vote.downValue === 1) {
-           scope.vote.downvotes++;
-         } else {
-           scope.vote.downvotes--;
-         }
-       };
-
-  $scope.deleteComment = function() {
-    postFactory.deleteComment($stateParams.id, this.review._id)
-      .then(function(post) {
-        $scope.post = post;
-  })
-}
-
-
-
-
-
+    postFactory.getComments($stateParams.id).then(function(comments) {
+        $scope.post = comments;
+    });
 
 
 });
