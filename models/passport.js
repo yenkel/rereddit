@@ -4,8 +4,8 @@ var User = require('./userModel');
 var jwt = require('jsonwebtoken');
 
 passport.use(new FacebookStrategy({
-        clientID: '1357380317683447',
-        clientSecret: 'e8cff837dca361751fe84d04635a5a9f',
+        clientID: '1875332789387782',
+        clientSecret: '72e0681290d1327156a00d297fad0009',
         callbackURL: 'https://rereddit29.herokuapp.com/auth/facebook/callback',
         profileFields: ['email', 'displayName']
     },
