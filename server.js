@@ -7,7 +7,7 @@ var postsRoutes = require('./routes/postsRoutes');
 var authRoutes = require('./routes/authRoutes');
 
 var app = express();
-mongoose.connect('mongodb://localhost/posts');
+mongoose.connect(process.env.CONNECTION_STRING || 'mongodb://localhost/posts');
 
 app.use(passport.initialize());
 app.use(bodyParser.json());
@@ -18,11 +18,9 @@ app.use(express.static('public'));
 app.use(express.static('node_modules'));
 
 app.all('*', function(req, res) {
-  res.sendFile(__dirname + "/public/index.html")
+    res.sendFile(__dirname + "/public/index.html")
 });
 
 
 //start the server
-app.listen('8000', function() {
-  console.log("yo yo yo, on 8000 bro");
-});
+app.listen(process.env.PORT || '8000');
