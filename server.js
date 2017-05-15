@@ -23,4 +23,4 @@ app.all('*', function(req, res) {
 
 
 //start the server
-app.listen(process.env.PORT || '8000');
+app.listen(process.env.PORT || '8080');
